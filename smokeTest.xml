@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" >
+	<!-- <parameter name="webDriverConfig" value="chrome" /> -->
+	<parameter name="browser" value="chrome" />
+	<test name="Test" >
+		<classes>
+			<class name="test.smoke.smokeTest">
+				<methods>
+					<exclude name = "validateSuccessfullyCreatedUserAccount" />
+					<include name = "validateUserSuccessfullyLogin" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>
