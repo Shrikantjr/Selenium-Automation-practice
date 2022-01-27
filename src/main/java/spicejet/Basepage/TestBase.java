@@ -21,6 +21,7 @@ public class TestBase {
 
 	public static RemoteWebDriver driver;
 	public static Properties prop;
+	public static WebDriverWait wait;
 	
 	
 	public TestBase(){

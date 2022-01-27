@@ -3,6 +3,7 @@ package test.smoke;
 import static org.testng.Assert.assertEquals;
 
 import org.testng.Assert;
+import org.testng.IRetryAnalyzer;
 import org.testng.annotations.AfterMethod;
 
 import org.testng.annotations.BeforeMethod;
@@ -13,6 +14,7 @@ import spicejet.Pages.HomePage;
 import spicejet.Pages.LoginPage;
 import spicejet.Pages.PlatformPage;
 import spicejet.Pages.SignupPage;
+import test.Globals;
 
 
 
@@ -42,7 +44,8 @@ public class smokeTest extends TestBase{
 		
 	}
 	
-	@Test
+	@Test(retryAnalyzer = IRetryAnalyzer.class)
+	@MaxRetryCount(Globals.MAX_RETRY_COUNT)
 	public void validateUserSuccessfullyLogin() {
 		String title = homepage.homepageTitle();
 		Assert.assertEquals(title, "Free Test Automation For All | TestProject", "Title is not the same");
