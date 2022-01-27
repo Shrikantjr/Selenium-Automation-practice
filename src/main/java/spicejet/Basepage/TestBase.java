@@ -54,7 +54,6 @@ public class TestBase {
 	public static void isElementPresent(int t, String element) {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, t);
-			
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(element)));
 		}
 		
