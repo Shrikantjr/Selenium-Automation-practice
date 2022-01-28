@@ -2,16 +2,16 @@
 <testng-results ignored="1" total="2" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-01-27T20:04:05 IST" name="Suite" finished-at="2022-01-27T20:04:31 IST" duration-ms="25111">
+  <suite started-at="2022-01-28T15:01:13 IST" name="Suite" finished-at="2022-01-28T15:01:35 IST" duration-ms="22049">
     <groups>
     </groups>
-    <test started-at="2022-01-27T20:04:05 IST" name="Test" finished-at="2022-01-27T20:04:31 IST" duration-ms="25111">
+    <test started-at="2022-01-28T15:01:13 IST" name="Test" finished-at="2022-01-28T15:01:35 IST" duration-ms="22049">
       <class name="test.smoke.smokeTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.smoke.smokeTest@3c73951]" started-at="2022-01-27T20:04:06 IST" name="setUp" finished-at="2022-01-27T20:04:19 IST" duration-ms="13546" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:test.smoke.smokeTest@6d4e5011]" started-at="2022-01-28T15:01:13 IST" name="setUp" finished-at="2022-01-28T15:01:24 IST" duration-ms="10779" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="validateUserSuccessfullyLogin()[pri:0, instance:test.smoke.smokeTest@3c73951]" started-at="2022-01-27T20:04:19 IST" name="validateUserSuccessfullyLogin" finished-at="2022-01-27T20:04:30 IST" duration-ms="10440" status="FAIL">
+        <test-method signature="validateUserSuccessfullyLogin()[pri:0, instance:test.smoke.smokeTest@6d4e5011]" started-at="2022-01-28T15:01:24 IST" name="validateUserSuccessfullyLogin" finished-at="2022-01-28T15:01:34 IST" duration-ms="10367" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[element is not displayed]]>
@@ -19,9 +19,9 @@
             <full-stacktrace>
               <![CDATA[java.lang.AssertionError: element is not displayed
 at org.testng.Assert.fail(Assert.java:99)
-at spicejet.Basepage.TestBase.isElementPresent(TestBase.java:62)
-at spicejet.Pages.LoginPage.loginToApplication(LoginPage.java:42)
-at test.smoke.smokeTest.validateUserSuccessfullyLogin(smokeTest.java:51)
+at spicejet.Basepage.TestBase.isElementPresent(TestBase.java:68)
+at spicejet.Pages.LoginPage.loginToApplication(LoginPage.java:46)
+at test.smoke.smokeTest.validateUserSuccessfullyLogin(smokeTest.java:54)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -56,7 +56,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateUserSuccessfullyLogin -->
-        <test-method is-config="true" signature="CloseBrowser()[pri:0, instance:test.smoke.smokeTest@3c73951]" started-at="2022-01-27T20:04:30 IST" name="CloseBrowser" finished-at="2022-01-27T20:04:31 IST" duration-ms="1014" status="PASS">
+        <test-method is-config="true" signature="CloseBrowser()[pri:0, instance:test.smoke.smokeTest@6d4e5011]" started-at="2022-01-28T15:01:34 IST" name="CloseBrowser" finished-at="2022-01-28T15:01:35 IST" duration-ms="845" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CloseBrowser -->

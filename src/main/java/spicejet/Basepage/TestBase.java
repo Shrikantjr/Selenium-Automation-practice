@@ -1,5 +1,6 @@
 package spicejet.Basepage;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -7,6 +8,8 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,6 +17,9 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.ITestResult;
+
+import com.google.common.io.Files;
 
 import spicejet.util.TestUtil;
 
@@ -52,14 +58,28 @@ public class TestBase {
 	}
 	
 	
-	public static void isElementPresent(int t, String element) {
+	public static void isElementPresent(int t) {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, t);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(element)));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='your@email.com' and @id='username']")));
 		}
 		
 		catch (Exception e) {
 			Assert.fail("element is not displayed");
 		}
 	}
+	
+	public void failed(String testMethodName){
+		File ScrShot =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		
+		try {
+			Files.copy(ScrShot, new File("C:\\Users\\Shdevkam\\eclipse-workspace\\"
+					+ "SpicejetTest\\Screenshots\\" +testMethodName+ "_"+ ".jpg"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
 }

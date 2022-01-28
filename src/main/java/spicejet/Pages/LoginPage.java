@@ -1,9 +1,13 @@
 package spicejet.Pages;
 
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
 import spicejet.Basepage.TestBase;
+
 
 
 public class LoginPage extends TestBase {
@@ -11,7 +15,7 @@ public class LoginPage extends TestBase {
 	@FindBy(xpath = "//div[contains(text(),'Login to your account')]")
 	private WebElement byLoginText;
 	
-	@FindBy(xpath = "//input[@placeholder='your@email.com']")
+	@FindBy(xpath = "//input[@placeholder='your@email.com' and @id='username']")
 	private WebElement byEmailAddress;
 
 	@FindBy(id = "password")
@@ -38,8 +42,9 @@ public class LoginPage extends TestBase {
 
 	public HomePage loginToApplication(String email, String password) {
 		
-		String s1 = "//div[contains(text(),'Login to your account')]";
-		isElementPresent(5, s1);
+//		String s1 = "//div[contains(text(),'Login to your account')]";
+		isElementPresent(7);
+//		wait.until(ExpectedConditions.invisibilityOf(byEmailAddress));
 		byEmailAddress.sendKeys(email);
 		System.out.println("entered email");
 		byPassword.sendKeys(password);

@@ -2,6 +2,7 @@ package test.smoke;
 
 import static org.testng.Assert.assertEquals;
 
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.Assert;
 import org.testng.IRetryAnalyzer;
 import org.testng.annotations.AfterMethod;
@@ -44,14 +45,14 @@ public class smokeTest extends TestBase{
 		
 	}
 	
-	@Test(retryAnalyzer = IRetryAnalyzer.class)
-	@MaxRetryCount(Globals.MAX_RETRY_COUNT)
+	@Test
 	public void validateUserSuccessfullyLogin() {
 		String title = homepage.homepageTitle();
 		Assert.assertEquals(title, "Free Test Automation For All | TestProject", "Title is not the same");
 		System.out.println("title is matching");
 		loginpage = homepage.clickOnLoginButton();
 		homepage = loginpage.loginToApplication(prop.getProperty("email"), prop.getProperty("password"));
+		
 	}
 	
 	@AfterMethod
