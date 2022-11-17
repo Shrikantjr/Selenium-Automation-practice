@@ -1,27 +1,22 @@
 package spicejet.Basepage;
 
+import com.google.common.io.Files;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import spicejet.util.TestUtil;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-import org.testng.ITestResult;
-
-import com.google.common.io.Files;
-
-import spicejet.util.TestUtil;
 
 public class TestBase {
 
@@ -33,7 +28,7 @@ public class TestBase {
 	public TestBase(){
 		try {
 		prop = new Properties();
-		FileInputStream ip = new FileInputStream("C:\\Users\\Shdevkam\\eclipse-workspace\\SpicejetTest\\src\\main\\java\\spicejet\\Config\\config.properties");
+		FileInputStream ip = new FileInputStream("C:\\Users\\HD273UW\\project\\Selenium-Automation-practice_testproject_site\\src\\main\\java\\spicejet\\Config\\config.properties");
 		prop.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -42,10 +37,10 @@ public class TestBase {
 		}
 	}
 	
-	public static void initialization() {
+	public static void initialization(String url) {
 		String browserName = prop.getProperty("browser");
 		if(browserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Shdevkam\\Downloads\\chromedriver\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\HD273UW\\Downloads\\chromedriver_win32\\chromedriver.exe");
 			driver = new ChromeDriver();
 		}
 		
