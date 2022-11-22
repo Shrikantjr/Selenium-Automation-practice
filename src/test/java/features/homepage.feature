@@ -1,10 +1,12 @@
 Feature: Homepage
 
   Background:
-    Given I enter the url
+    Given I enter the url "https://www.spicejet.com"
 
   Scenario: Homepage Validation
-      When I click on Departure city and I enter the city name "Pune"
+      #When I click on Departure city and I enter the city name
+  When I click on button
+
       #Then  I verify the title of page
 
 

@@ -14,12 +14,13 @@ public class homepageSteps extends TestBase {
 
     Logger log = Logger.getLogger(homepageSteps.class.getName());
 
-    @When("I click on Departure city and I enter the city name {string}")
-    public void iClickOnDepartureCity(){
-
+/*
+    @When("I click on Departure city and I enter the city name")
+    public void i_click_on_departure_city_and_i_enter_the_city_name() {
         System.out.println("hello there");
-
     }
+
+ */
 
 
     @And("I select the Departure date")
@@ -31,11 +32,14 @@ public class homepageSteps extends TestBase {
     }
 
 
-    @Given("I enter the url")
-    public void iEnterTheUrl(){
-        driver.get("https://www.google.com");
+    @Given("I enter the url {string}")
+    public void iEnterTheUrl(String url) {
+        driver.get(url);
         System.out.println("broswer is up");
     }
 
-
+    @When("I click on button")
+    public void iClickOnButton() {
+        System.out.println("checking the button");
+    }
 }
