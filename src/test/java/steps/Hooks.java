@@ -23,7 +23,7 @@ public class Hooks extends TestBase {
 
     @After
     public void afterScenario() throws IOException {
-        //driver.quit();
+        driver.quit();
 
     }
 

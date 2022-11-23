@@ -29,7 +29,33 @@ public class HomePage extends TestBase {
 	
 	@FindBy(xpath = "(//a[contains(text(),'Platform')])[position()=1]")
 	private WebElement byClickPlatform;
-	
+
+	@FindBy(xpath = "//input[@id='BE_flight_origin_city']")
+	private WebElement byClickDepart;
+
+	@FindBy(xpath = "//input[@id='BE_flight_arrival_city']")
+	private WebElement byClickGoing;
+
+	@FindBy(xpath = "//input[@placeholder=\"Enter airport code/city\" and @class='css-1cwyjr8 r-1yadl64 r-cqee49 r-1b43r93 r-1pi2tsx r-10paoce r-8zlnwy r-1k6034g']")
+	private WebElement byDepartCityAndGoingCity;
+
+	@FindBy(xpath = "//input[@placeholder=\"Enter airport code/city\" and @class='css-1cwyjr8 r-1yadl64 r-cqee49 r-1b43r93 r-1pi2tsx r-10paoce r-8zlnwy r-1k6034g']")
+	private WebElement byDepartCity;
+
+	public void clickDepartCity(){
+		byClickDepart.click();
+	}
+
+	public void clickGoingCity(){
+		byClickGoing.click();
+	}
+
+	public void clickDepartCityAndGoingCity(){
+		byDepartCityAndGoingCity.click();
+		byDepartCityAndGoingCity.sendKeys("Pune");
+
+	}
+
 	//initize page objects
 
 

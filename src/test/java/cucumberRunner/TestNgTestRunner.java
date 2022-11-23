@@ -5,10 +5,11 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
-        plugin = {"pretty", "json:target/cucumber-parallel/output.json",
+        plugin = {"pretty", "json:target/cucumber.json",
         "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
         "rerun:target/failed_scenarios.txt"},
         monochrome = true,
+        publish = true,
         features = "src/test/java/features/homepage.feature",
         glue = {"steps"}
         //tags = "@RegTest"

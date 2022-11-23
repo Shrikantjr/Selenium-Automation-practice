@@ -5,23 +5,12 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import spicejet.Basepage.TestBase;
+import spicejet.Pages.HomePage;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.logging.Logger;
 
 public class homepageSteps extends TestBase {
-
-    Logger log = Logger.getLogger(homepageSteps.class.getName());
-
-/*
-    @When("I click on Departure city and I enter the city name")
-    public void i_click_on_departure_city_and_i_enter_the_city_name() {
-        System.out.println("hello there");
-    }
-
- */
-
 
     @And("I select the Departure date")
     public void iSelectTheDepartureDate(DataTable data) {
@@ -36,10 +25,25 @@ public class homepageSteps extends TestBase {
     public void iEnterTheUrl(String url) {
         driver.get(url);
         System.out.println("broswer is up");
+        System.out.println("title name is: " + driver.getTitle());
+
+        //OpenNewTab("https:www.github.com");
     }
 
     @When("I click on button")
     public void iClickOnButton() {
         System.out.println("checking the button");
     }
+
+    @When("I click and enter the origin city")
+    public void i_click_and_enter_the_origin_city() {
+        HomePage p1 = new HomePage();
+        p1.clickDepartCityAndGoingCity();
+
+
+
+
+    }
+
+
 }
