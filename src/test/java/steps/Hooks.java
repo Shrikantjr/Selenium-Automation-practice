@@ -17,18 +17,27 @@ public class Hooks extends TestBase {
     @Before
     public void beforeScenario(){
         TestBase tb = new TestBase();
-        System.out.println("lets see");
         tb.setDriver();
     }
 
     @After
     public void afterScenario() throws IOException {
-        driver.quit();
+        //driver.quit();
 
     }
 
+
+
+
     @AfterStep
     public void AddScreenshot(Scenario scenario) throws IOException {
+        /*
+        ExtentReports extent = new ExtentReports();
+        ExtentSparkReporter spark = new ExtentSparkReporter("target/Spark.html");
+        extent.attachReporter(spark);
+
+
+         */
         if (scenario.isFailed()){
          File sourcePath = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
             byte[] fileContent= FileUtils.readFileToByteArray(sourcePath);

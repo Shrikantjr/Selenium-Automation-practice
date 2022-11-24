@@ -3,7 +3,6 @@ package spicejet.Basepage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
@@ -21,7 +20,7 @@ public class TestBase {
         options.addArguments("disable-infobars");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         System.out.println("opening the chrome browser");
     }
     /*
@@ -31,6 +30,7 @@ public class TestBase {
         System.out.println(driver.getTitle());
     }
      */
+
 
 
 }

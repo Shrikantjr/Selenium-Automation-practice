@@ -6,11 +6,16 @@ import org.openqa.selenium.support.FindBy;
 import spicejet.Basepage.TestBase;
 
 public class HomePage extends TestBase {
-	
-	WebDriver driver;
+	 WebDriver driver;
 	//Page Factory - OR;
-	
 
+	/*
+	public HomePage(WebDriver driver){
+		this.driver=driver;
+	}
+
+
+	 */
 	@FindBy(id ="cc-button")
 	private WebElement byAcceptCookie;
 	
@@ -36,14 +41,23 @@ public class HomePage extends TestBase {
 	@FindBy(xpath = "//input[@id='BE_flight_arrival_city']")
 	private WebElement byClickGoing;
 
-	@FindBy(xpath = "//input[@placeholder=\"Enter airport code/city\" and @class='css-1cwyjr8 r-1yadl64 r-cqee49 r-1b43r93 r-1pi2tsx r-10paoce r-8zlnwy r-1k6034g']")
+	@FindBy(xpath = "")
 	private WebElement byDepartCityAndGoingCity;
+
+	@FindBy(xpath = "//a[@id='booking_engine_hotels']")
+	private WebElement byHotels;
 
 	@FindBy(xpath = "//input[@placeholder=\"Enter airport code/city\" and @class='css-1cwyjr8 r-1yadl64 r-cqee49 r-1b43r93 r-1pi2tsx r-10paoce r-8zlnwy r-1k6034g']")
 	private WebElement byDepartCity;
 
 	public void clickDepartCity(){
-		byClickDepart.click();
+		try {
+			byClickDepart.click();
+			byClickDepart.sendKeys("Pune");
+			System.out.println("clicked on depart city");
+		}
+		catch (Exception e){
+		}
 	}
 
 	public void clickGoingCity(){
@@ -56,7 +70,17 @@ public class HomePage extends TestBase {
 
 	}
 
+	public void clickByHotels(){
+		try {
+			byHotels.click();
+			driver.getTitle();
+			System.out.println("clicked on hotelss");
+		}
+		catch (Exception e){}
+	}
+
 	//initize page objects
+
 
 
 

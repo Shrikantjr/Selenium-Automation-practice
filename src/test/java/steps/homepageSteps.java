@@ -38,7 +38,9 @@ public class homepageSteps extends TestBase {
     @When("I click and enter the origin city")
     public void i_click_and_enter_the_origin_city() {
         HomePage p1 = new HomePage();
-        p1.clickDepartCityAndGoingCity();
+        p1.clickDepartCity();
+
+
 
 
 
@@ -46,4 +48,9 @@ public class homepageSteps extends TestBase {
     }
 
 
+    @When("I click on Hotels")
+    public void iClickOnHotels() {
+        HomePage p1 = new HomePage();
+        p1.clickByHotels();
+    }
 }

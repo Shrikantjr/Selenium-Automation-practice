@@ -5,11 +5,11 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
-        plugin = {"pretty", "json:target/cucumber-parallel/output.json",
+        plugin = {"pretty",
         "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
         monochrome = true,
-        features = "src/test/java/features/homepage.feature",
-        glue = {"steps"}
+        features = "",
+        glue = {""}
         //tags = "@RegTest"
 )
 

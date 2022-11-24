@@ -5,14 +5,14 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
-        plugin = {"pretty", "json:target/cucumber.json",
-        "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-        "rerun:target/failed_scenarios.txt"},
+        plugin = {"pretty",
+        "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
+        //rerun:target/failed_scenarios.txt
         monochrome = true,
         publish = true,
-        features = "src/test/java/features/homepage.feature",
-        glue = {"steps"}
-        //tags = "@RegTest"
+        features = "src/test/java/features",
+        glue = {"steps"},
+        tags = "@RegTest"
 )
 
 public class TestNgTestRunner extends AbstractTestNGCucumberTests {
