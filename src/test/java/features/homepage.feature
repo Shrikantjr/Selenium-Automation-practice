@@ -1,19 +1,15 @@
 Feature: Homepage
 
   Background:
-    Given I enter the url "https://www.yatra.com"
+    Given I enter the url "https://www.indiabix.com/data-interpretation/table-charts/034001"
 
-  @RegTest
+  @SmokeTest
   Scenario: Homepage Validation
     When I click and enter the origin city
+    #When i get the value
+
+    #When i see the logs
+    #Then i say good bye
     #Then  I verify the title of page
 
-  @RegTest
-  Scenario: Homepage ticket booking
-  When I click on Hotels
-
-  # When I click on Departure city and I enter the city name "Pune"
-      #And I enter the Destination city as "Mumbai"
-   # And I select the Departure date
-     # |Pune|Mumbai|Nanded|Leh|Munnar|
 

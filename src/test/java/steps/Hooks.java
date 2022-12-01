@@ -31,13 +31,7 @@ public class Hooks extends TestBase {
 
     @AfterStep
     public void AddScreenshot(Scenario scenario) throws IOException {
-        /*
-        ExtentReports extent = new ExtentReports();
-        ExtentSparkReporter spark = new ExtentSparkReporter("target/Spark.html");
-        extent.attachReporter(spark);
 
-
-         */
         if (scenario.isFailed()){
          File sourcePath = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
             byte[] fileContent= FileUtils.readFileToByteArray(sourcePath);

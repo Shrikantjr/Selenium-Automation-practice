@@ -1,21 +1,18 @@
 package spicejet.Pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import spicejet.Basepage.TestBase;
+
+import java.util.List;
 
 public class HomePage extends TestBase {
 	 WebDriver driver;
 	//Page Factory - OR;
 
-	/*
-	public HomePage(WebDriver driver){
-		this.driver=driver;
-	}
-
-
-	 */
 	@FindBy(id ="cc-button")
 	private WebElement byAcceptCookie;
 	
@@ -41,7 +38,7 @@ public class HomePage extends TestBase {
 	@FindBy(xpath = "//input[@id='BE_flight_arrival_city']")
 	private WebElement byClickGoing;
 
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//input[@id='BE_flight_arrival_city']")
 	private WebElement byDepartCityAndGoingCity;
 
 	@FindBy(xpath = "//a[@id='booking_engine_hotels']")
@@ -49,6 +46,15 @@ public class HomePage extends TestBase {
 
 	@FindBy(xpath = "//input[@placeholder=\"Enter airport code/city\" and @class='css-1cwyjr8 r-1yadl64 r-cqee49 r-1b43r93 r-1pi2tsx r-10paoce r-8zlnwy r-1k6034g']")
 	private WebElement byDepartCity;
+
+	@FindBy(xpath = "//div[@id='divDirection']")
+	private WebElement byFrame;
+
+
+	public HomePage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
 
 	public void clickDepartCity(){
 		try {
@@ -58,6 +64,23 @@ public class HomePage extends TestBase {
 		}
 		catch (Exception e){
 		}
+	}
+
+	public  void getValue(String name){
+		driver.switchTo().frame(byFrame);
+		List <WebElement> studentId= driver.findElements(By.xpath("//table[@class='di-tbl-data']//tr/td[1]"));
+		List <WebElement> marks= driver.findElements(By.xpath("//table[@class='di-tbl-data']//tr/td[2]"));
+
+		for(int i=0; i<studentId.size(); i++){
+
+			if(studentId.get(i).getText().equalsIgnoreCase(name)){
+				System.out.println(marks.get(i).getText());
+
+				break;
+			}
+
+		}
+
 	}
 
 	public void clickGoingCity(){

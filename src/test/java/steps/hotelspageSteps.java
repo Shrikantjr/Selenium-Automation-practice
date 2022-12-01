@@ -8,7 +8,7 @@ public class hotelspageSteps extends TestBase {
 
     @When("i click on hotel search button")
     public void iClickHotelsSearchButton(){
-        HotelsPage p2 = new HotelsPage();
+        HotelsPage p2 = new HotelsPage(driver);
         p2.clickHotelsSearchButton();
     }
 

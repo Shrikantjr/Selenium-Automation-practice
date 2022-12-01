@@ -1,7 +1,7 @@
 Feature: Hotelspage
 
 Background:
-  Given I enter the url "https://www.yatra.com"
+  Given I enter the url "https://www.indiabix.com/data-interpretation/table-charts/034001"
 
   @RegTest
 Scenario: Hotel page Validation

@@ -12,7 +12,7 @@ import org.testng.annotations.DataProvider;
         publish = true,
         features = "src/test/java/features",
         glue = {"steps"},
-        tags = "@RegTest"
+        tags = "@SmokeTest"
 )
 
 public class TestNgTestRunner extends AbstractTestNGCucumberTests {
