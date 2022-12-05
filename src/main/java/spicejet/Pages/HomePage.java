@@ -50,11 +50,19 @@ public class HomePage extends TestBase {
 	@FindBy(xpath = "//div[@id='divDirection']")
 	private WebElement byFrame;
 
+	@FindBy(xpath = "//div[@id='divDirection']")
+	private WebElement byIFrame;
 
+
+
+	//note: if we not initalize the page factory we will get null pointer exception saying this.driver = null
+	//for all the page class which extends the basepage using inheritance concept needs to be init page factory
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
+
+
 
 	public void clickDepartCity(){
 		try {
