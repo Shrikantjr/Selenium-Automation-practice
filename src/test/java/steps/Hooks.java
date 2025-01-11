@@ -27,9 +27,6 @@ public class Hooks extends TestBase {
 
     }
 
-
-
-
     @AfterStep
     public void AddScreenshot(Scenario scenario) throws IOException {
 
